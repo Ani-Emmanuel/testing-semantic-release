@@ -1,4 +1,3 @@
-// console.log('Hello worldsd');
 const moment = require('moment');
 require('moment-timezone');
 
@@ -11,7 +10,6 @@ function convertDateToTimeZone(dateString, timeZone) {
 		return null;
 	}
 
-	// const date = moment.utc(dateString).tz(timeZone);
 	return moment.tz(dateString, timeZone).format('DD MMM YYYY, HH:MM:SS A');
 }
 
