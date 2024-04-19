@@ -1,20 +1,33 @@
 const config = {
 	branches: ['testing_ci'],
 	plugins: [
-		'@semantic-release/commit-analyzer',
+		[
+			'@semantic-release/commit-analyzer',
+			{
+				preset: 'angular',
+				releaseRules: [
+					{
+						type: 'docs',
+						scope: 'README',
+						release: 'patch'
+					},
+					{
+						type: 'refactor',
+						release: 'patch'
+					},
+					{
+						type: 'style',
+						release: 'patch'
+					}
+				],
+				parserOpts: {
+					noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
+				}
+			}
+		],
 		'@semantic-release/release-notes-generator',
-		[
-			'@semantic-release/npm',
-			{
-				npmPublish: false
-			}
-		],
-		[
-			'@semantic-release/git',
-			{
-				assets: ['./**/*.js', './**/*.js.map']
-			}
-		],
+		'@semantic-release/changelog',
+		'@semantic-release/git',
 		'@semantic-release/github'
 	]
 };
