@@ -4,10 +4,6 @@ on:
 
 jobs:
   release:
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,3 +14,4 @@ jobs:
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: rm -rf node_modules
