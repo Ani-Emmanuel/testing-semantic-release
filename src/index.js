@@ -15,3 +15,4 @@ function convertDateToTimeZone(dateString, timeZone) {
 
 console.log(convertDateToTimeZone('2024-04-01T01:00:00Z', 'America/Los_Angeles'));
 console.log('Assume that this is a breaking changes');
+console.log('Assume this is a patch fix');
