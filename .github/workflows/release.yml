@@ -1,7 +1,9 @@
 name: Release semantic-release
 on:
   workflow_dispatch:
-
+  push:
+    branches:
+      - "testing_ci"
 jobs:
   release:
     permissions:
