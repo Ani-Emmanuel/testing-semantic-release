@@ -6,8 +6,7 @@ const config = {
 		[
 			'@semantic-release/npm',
 			{
-				npmPublish: false,
-				pkgRoot: false
+				npmPublish: false
 			}
 		],
 		[
